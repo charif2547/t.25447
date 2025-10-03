@@ -8,14 +8,12 @@ from PIL import Image
 # --- โหลดโมเดล SVM ---
 model = joblib.load("svm_image_classifier_model.pkl")
 
-# --- สร้าง UI ---
 st.title("Fruit Classifier")
-st.write("Please upload file for predict 🤩(Apple and Orange)")
+st.write("Please upload file for predict (Apple and Orange)")
 
 # dictionary แปลง class index เป็นชื่อ
-class_dict = {0: "🍎APPLE🍎", 1: "🍊ORANGE🍊"}
+class_dict = {0: "🍎", 1: "🍊"}
 
-# --- อัปโหลดรูป ---
 uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "png", "jpeg"])
 
 if uploaded_file is not None:
